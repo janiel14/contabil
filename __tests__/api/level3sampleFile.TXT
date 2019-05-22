@@ -1,0 +1,43 @@
+Balancete Contábil									Pág.: 1 de 3
+Empresa: Space Exploration Technologies Corp. - CNPJ: 99.999.999/9999-99									Software Contábil
+Período: 01/01/2018 a 31/01/2018; Estabelecimento(s): Todos; Centro(s) de Resultados: Todos									
+Conta	Descrição		Saldo Anterior		Débitos	Créditos			Saldo Atual
+1	*** Ativo ***	82997,66	D		247726,89	240377,5		90347,05	D
+11	Ativo Circulante	32573,59	D		247726,89	239574,01		40726,47	D
+111	Disponível	24059,92	D		200259,03	187061,24		37257,71	D
+11101	Caixa Geral	3758,78	D		145995,84	146317,86		3436,76	D
+111010001	Caixa Fixo	3758,78	D		145995,84	146317,86		3436,76	D
+11102	Depósitos Bancários à Vista	19316,93	D		54213,19	40743,38		32786,74	D
+111020001	Santander	19316,93	D		54213,19	40743,38		32786,74	D
+11103	Aplicação de Liquidez Imediata	984,21	D		50	0		1034,21	D
+111030001	Poupança Santander	984,21	D		50	0		1034,21	D
+113	Clientes	6420,06	D		38956,9	43635,46		1741,5	D
+11304	Cartão de Crédito	6420,06	D		38956,9	43635,46		1741,5	D
+113040001	Cartão de Crédito	6420,06	D		38956,9	43635,46		1741,5	D
+114	Outros Créditos	1854,84	D		6941,02	7411,14		1384,72	D
+11403	Créditos de Funcionários	1854,84	D		6941,02	7411,14		1384,72	D
+114030001	Adiantamento de Salários	451,54	D		5556,3	6007,84		0	 
+114030002	Adiantamento de Férias	1403,3	D		1384,72	1403,3		1384,72	D
+116	Estoques	238,77	D		1569,94	1466,17		342,54	D
+11603	Estoque de Mercadorias	238,77	D		1569,94	1466,17		342,54	D
+116030001	Mercadorias Restaurante	238,77	D		1569,94	1466,17		342,54	D
+13	Ativo Permanente	39576,15	D		0	803,49		38772,66	D
+133	Imobilizado	39576,15	D		0	803,49		38772,66	D
+13301	Bens Em Operação	56024,12	D		0	0		56024,12	D
+133010005	Móveis e Utensílios	13933,65	D		0	0		13933,65	D
+133010006	Instalações Diversas	1695,16	D		0	0		1695,16	D
+133010007	Veículos	36500,61	D		0	0		36500,61	D
+133010011	Equipamentos de Proc.De Dados	3894,7	D		0	0		3894,7	D
+13302	Deprec.Amortizacao e Exaustão Acumulada	16447,97	C		0	803,49		17251,46	C
+133020004	Móveis e Utensílios	2526,29	C		0	116,11		2642,4	C
+133020005	Instalações Diversas	268,47	C		0	14,13		282,6	C
+133020006	Veículos	12561,35	C		0	608,34		13169,69	C
+133020010	Equipamentos Proc.De Dados	1091,86	C		0	64,91		1156,77	C
+14	Compensações Ativas	10847,92	D		0	0		10847,92	D
+141	Contas de Compensações	10847,92	D		0	0		10847,92	D
+14101	Bens Recebidos em Comodato	10847,92	D		0	0		10847,92	D
+141010001	Bens Recebidos em Comodato	10847,92	D		0	0		10847,92	D
+2	*** Passivo ***	82997,66	C		33628,08	30977,47		80347,05	C
+21	Passivo Circulante	15008,36	C		26566,24	28434,36		16876,48	C
+211	Fornecedores	840,36	C		747,8	2565,72		2658,28	C
+21101	Fornecedores Nacionais	840,36	C		747,8	2565,72		2658,28	C

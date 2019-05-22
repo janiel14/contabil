@@ -30,5 +30,5 @@ it('Get all balances', function() {
 });
 
 it('Get all balances, using search', function() {
-    return frisby.get(host + '/api/balances/0/100/TEST DESCRIPTION').expect('status', 200);
+    return frisby.get(host + '/api/balances/0/100/TEST').expect('status', 200);
 });

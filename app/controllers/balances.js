@@ -29,6 +29,7 @@ module.exports = function(app) {
                     classifier: req.body.classifier
                 });
                 if (balance) {
+                    req.body.updated_date = new Date();
                     await Balances.updateOne({
                         classifier: balance.classifier
                     }, req.body);
@@ -37,6 +38,8 @@ module.exports = function(app) {
                         data: req.body
                     });
                 } else {
+                    req.body.created_date = new Date();
+                    req.body.updated_date = new Date();
                     const created = await Balances.create(req.body);
                     res.status(200).json({
                         message: 'Balance created success',

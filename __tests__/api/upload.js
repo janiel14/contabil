@@ -1,12 +1,12 @@
 const frisby = require('frisby');
 const fs = require('fs');
+const path = require('path');
 const host = 'http://localhost:7000';
-const filePath = path.resolve(__dirname, './sampleFile.TXT');
+const formData = frisby.formData();
+let filePath = path.resolve(__dirname, './level1sampleFile.TXT');
 let content = fs.createReadStream(filePath);
-let formData = frisby.formData();
 formData.append('balance', content);
-
-it ('test send sample file for upload', function() {
-    return frisby.post(host + '/api/upload', { body: formData })
+it ('test send sample file level 1 for upload', function() {
+    return frisby.post(host + '/api/upload?type=lv1', { body: formData })
     .expect('status', 200)
 });

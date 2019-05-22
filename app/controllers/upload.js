@@ -3,6 +3,45 @@ module.exports = function(app) {
     const Balances = app.models.balances;
 
     /**
+     * processFileData
+     * @param {String} data
+     * @param {String} type
+     */
+    const processFileData = async (data, type) => {
+        try {
+            let response = [];
+            if (type === "lv1" || type === 'lv2') {
+                response = await app.fileParser.parseInArray(data.toString());
+            } else if (type === "lv3") {
+                response = await app.fileParser.parseInArrayBalanceContabil(data.toString());
+            } else {
+                response = await app.fileParser.parseInArrayAnalitycs(data.toString());
+            }
+            if (response.length > 0) {
+                await Promise.all(response.map(async (item) => {
+                    const find = await Balances.findOne({
+                        classifier: item.classifier
+                    });
+                    if (find) {
+                        item.updated_date = new Date();
+                        item = await Balances.updateOne({
+                            classifier: item.classifier
+                        },item);
+                    } else {
+                        item.created_date = new Date();
+                        item.updated_date = new Date();
+                        item = await Balances.create(item);
+                    }
+                    return item;
+                }));
+            }
+        } catch (error) {
+            console.error('app - controllers - upload - processFileData: ', error);
+            app.logger.error('aapp - controllers - upload - processFileData:: ' + error);
+        }
+    }
+
+    /**
      * uploadedFile
      * @param {Object} req
      * @param {Object} res
@@ -16,32 +55,10 @@ module.exports = function(app) {
                     message: 'File not uploaded!'
                 });
             } else {
-                const data = req.files.balance.data;
-                let response = [];
-                if (req.params.type === "lv1" || req.params.type === 'lv2') {
-                    response = app.fileParser.parseInArray(data);
-                } else if (req.params.type === "lv3") {
-                    response = app.fileParser.parseInArrayBalanceContabil(data);
-                } else {
-                    response = app.fileParser.parseInArrayAnalitycs(data);
-                }
-                if (response.length > 0) {
-                    await Promise.all(response.map(async (item) => {
-                        item = await Balances.create(item);
-                    }));
-                    res.status(200).json({
-                        message: 'File imported success',
-                        data: response
-                    });
-                } else {
-                    res.status(500).json({
-                        message: 'Fatal error on read file!',
-                        data: {
-                            file: data,
-                            parser: response
-                        }
-                    });
-                }
+                processFileData(req.files.balance.data, req.query.type);
+                res.status(200).json({
+                    message: 'File imported success'
+                });
             }
         } catch (error) {
             console.error('app - controllers - upload - uploadedFile: ', error);

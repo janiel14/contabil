@@ -274,7 +274,7 @@ it('test send file level4 to parser', function() {
     21807  2102010700          FINAME EMPILHADEIRA 9999999-9                   26.659,07        1.159,09           0,00      25.499,98
     21808  2102010800          FINAME EMPILHADEIRA 9999999-9                   66.742,54        3.808,03           0,00      62.934,51`;
     const dataReturn = fileParser.parseInArrayAnalitycs(data);
-    console.log(dataReturn);
+    //console.log(dataReturn);
     if (dataReturn.length > 0) {
         return true;
     }

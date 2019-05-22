@@ -13,11 +13,13 @@ module.exports = function(app) {
         },
         description: {
             type: String,
-            required: true
+            required: true,
+            index: true
         },
         classifier: {
             type: Number,
-            required: true
+            required: true,
+            index: true
         },
         openingBalance: {
             type: Number,
@@ -41,14 +43,14 @@ module.exports = function(app) {
         }
     });
     schema.index({
-        created_date: 'text',
-        updated_date: 'text',
-        description: 'text',
-        classifier: 'text',
-        openingBalance: 'text',
-        debit: 'text',
-        credit: 'text',
-        finalBalance: 'text'
+        "created_date": "text",
+        "updated_date": "text",
+        "description": "text",
+        "classifier": "text",
+        "openingBalance": "text",
+        "debit": "text",
+        "credit": "text",
+        "finalBalance": "text"
     });
     return app.mongoose.model('balances', schema);
 }
